@@ -1,11 +1,4 @@
-/* =============================================
-   PORTFOLIO WEBSITE — PANGA ANJAN
-   JavaScript: Particles, Animations, Interactions
-   ============================================= */
 
-// =============================================
-// 1) LOADING SCREEN
-// =============================================
 (function () {
     const loader = document.getElementById('loader');
     const loaderFill = document.getElementById('loaderFill');
