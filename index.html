@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Murali- Portfolio</title>
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a0a0f'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-size='16' font-weight='bold'%3E%3Ctspan fill='%2300d4ff'%3E%26lt;%3C/tspan%3E%3Ctspan fill='%23ffffff'%3EPA%3C/tspan%3E%3Ctspan fill='%2300d4ff'%3E/%26gt;%3C/tspan%3E%3C/text%3E%3C/svg%3E">
+    <meta name="description"
+        content="Portfolio of Murali Patnala — AI/ML enthusiast, developer, and B.Tech AI student specializing in machine learning, deep learning, and data analysis.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursorFollower"></div>
+
+    <!-- Particle Canvas -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-glitch" data-text="MURALI LAKSHMI SAI PATNALA">MURALI LAKSHMI SAI PATNALA</div>
+            <div class="loader-bar">
+                <div class="loader-bar-fill" id="loaderFill"></div>
+            </div>
+            <p class="loader-text">Initializing Portfolio...</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <a href="#hero" class="nav-logo">
+            <span class="nav-logo-bracket">&lt;</span>MP<span class="nav-logo-bracket">/&gt;</span>
+        </a>
+        <div class="nav-links" id="navLinks">
+            <a href="#about" class="nav-link" data-text="About">About</a>
+            <a href="#skills" class="nav-link" data-text="Skills">Skills</a>
+            <a href="#experience" class="nav-link" data-text="Experience">Experience</a>
+            <a href="#projects" class="nav-link" data-text="Projects">Projects</a>
+            <a href="#awards" class="nav-link" data-text="Awards">Awards</a>
+            <a href="#education" class="nav-link" data-text="Education">Education</a>
+            <a href="#contact" class="nav-link" data-text="Contact">Contact</a>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-links">
+            <a href="#about" class="mobile-link">About</a>
+            <a href="#skills" class="mobile-link">Skills</a>
+            <a href="#experience" class="mobile-link">Experience</a>
+            <a href="#projects" class="mobile-link">Projects</a>
+            <a href="#awards" class="mobile-link">Awards</a>
+            <a href="#education" class="mobile-link">Education</a>
+            <a href="#contact" class="mobile-link">Contact</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg-grid"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <p class="hero-greeting reveal-up">Hello, I'm</p>
+                <h1 class="hero-name glitch" data-text="MURALI LAKSHMI SAI PATNALA">MURALI LAKSHMI SAI PATNALA</h1>
+                <div class="hero-title-wrapper">
+                    <span class="hero-title-prefix">I'm a&nbsp;</span>
+                    <span class="hero-typed" id="heroTyped"></span>
+                    <span class="hero-cursor">|</span>
+                </div>
+                <p class="hero-description reveal-up">
+                    AI enthusiast and undergraduate skilled in Machine Learning, Deep Learning, 
+                    and Data Analysis, transforming data into intelligent,
+                     real-world solutions.
+                </p>
+                <div class="hero-cta reveal-up">
+                    <a href="#projects" class="btn btn-primary">
+                        <span>View Projects</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                    <a href="#contact" class="btn btn-outline">
+                        <span>Get in Touch</span>
+                    </a>
+                </div>
+
+            </div>
+            <div class="hero-image-wrapper reveal-up">
+                <div class="hero-image-container">
+                    <div class="hero-image-ring"></div>
+                    <div class="hero-image-ring ring-2"></div>
+                    <div class="hero-image-glow"></div>
+                    <img src="link.jpeg" alt="MURALI LAKSHMI SAI PATNALA" class="hero-image" id="heroImage">
+                </div>
+                <div class="hero-image-dots"></div>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <span>Scroll Down</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">&lt;about&gt;</span>
+                <h2 class="section-title">About <span class="text-gradient">Me</span></h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="about-grid">
+                <div class="about-text reveal-left">
+                    <p>I'm <strong>Murali Lakshmi Sai Patnala</strong>, an Artificial Intelligence undergraduate at <strong>Vignan's
+                            Institute of Information Technology</strong>, Visakhapatnam. I'm passionate about leveraging
+                        AI and machine learning to solve complex, real-world problems.</p>
+                    <p>With hands-on experience in <strong>Python-based AI projects</strong>, and data
+                        analysis, I thrive on building end-to-end solutions — from designing application architectures
+                        to training ML models and crafting intuitive user interfaces.</p>
+                    <p>My journey includes working as an <strong>AI/ML Intern</strong>, developing projects like a
+                        Resume Skill Gap Analyzer and a Cancer Predictor, and earning certifications from
+                        <strong>Oracle</strong> and <strong>IBM</strong>. I'm also a 
+                        competitive programmer.
+                    </p>
+                    <div class="about-info-grid">
+                        <div class="about-info-item">
+                            <span class="about-info-label">Name</span>
+                            <span class="about-info-value">Murali Lakshmi Sai Patnala</span>
+                        </div>
+                        <div class="about-info-item">
+                            <span class="about-info-label">Email</span>
+                            <span class="about-info-value">muralipatnala2486@gmail.com</span>
+                        </div>
+                        <div class="about-info-item">
+                            <span class="about-info-label">Location</span>
+                            <span class="about-info-value">Visakhapatnam, India</span>
+                        </div>
+                        <div class="about-info-item">
+                            <span class="about-info-label">Degree</span>
+                            <span class="about-info-value">B.Tech AI (2028)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual reveal-right">
+                    <div class="about-code-block">
+                        <div class="code-header">
+                            <span class="code-dot red"></span>
+                            <span class="code-dot yellow"></span>
+                            <span class="code-dot green"></span>
+                            <span class="code-filename">anjan.py</span>
+                        </div>
+                        <pre class="code-content"><code><span class="code-keyword">class</span> <span class="code-class">MuraliPatnala</span>:
+    <span class="code-keyword">def</span> <span class="code-func">__init__</span>(<span class="code-param">self</span>):
+        <span class="code-param">self</span>.name = <span class="code-string">"Murali Patnala"</span>
+        <span class="code-param">self</span>.role = <span class="code-string">"AI/ML Developer"</span>
+        <span class="code-param">self</span>.languages = [
+            <span class="code-string">"Python"</span>, <span class="code-string">"Java"</span>,
+            <span class="code-string">"HTML"</span>, <span class="code-string">"CSS"</span>, <span class="code-string">"SQL"</span>
+        ]
+        <span class="code-param">self</span>.passion = <span class="code-string">"Building AI solutions"</span>
+
+    <span class="code-keyword">def</span> <span class="code-func">get_goal</span>(<span class="code-param">self</span>):
+        <span class="code-keyword">return</span> <span class="code-string">"Apply intelligent solutions
+        to real-world problems"</span></code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section section-dark" id="skills">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">&lt;skills&gt;</span>
+                <h2 class="section-title">My <span class="text-gradient">Skills</span></h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category reveal-up">
+                    <div class="skill-category-header">
+                        <div class="skill-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M16 18l6-6-6-6M8 6l-6 6 6 6" />
+                            </svg>
+                        </div>
+                        <h3>Programming Languages</h3>
+                    </div>
+                    <div class="skill-bars">
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-header">
+                                <span>Java</span><span>80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" data-width="80"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-header">
+                                <span>Python</span><span>60%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" data-width="60"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-header">
+                                <span>HTML,CSS & JAVASCRIPT</span><span>80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" data-width="80"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-header">
+                                <span>SQL</span><span>80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" data-width="80"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category reveal-up">
+                    <div class="skill-category-header">
+                        <div class="skill-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                            </svg>
+                        </div>
+                        <h3>AI, Data & Analytics</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Frontend-Development</span>
+                        
+                        <span class="skill-tag">Data Analysis</span>
+                        
+                        <span class="skill-tag">Web-Development</span>
+                        <span class="skill-tag">Feature Engineering</span>
+                        
+                        <span class="skill-tag">API's</span>
+
+                        <span class="skill-tag">Prompt Engineering</span>
+                    </div>
+                </div>
+                <div class="skill-category reveal-up">
+                    <div class="skill-category-header">
+                        <div class="skill-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                <path d="M22 6l-10 7L2 6" />
+                            </svg>
+                        </div>
+                        <h3>Tools & Platforms</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Oracle Cloud Infrastructure</span>
+                        <span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">Google Colab</span>
+                        <span class="skill-tag">React (Vite)</span>
+                        <span class="skill-tag">Tailwind CSS</span>
+                        <span class="skill-tag">Git</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section" id="experience">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">&lt;experience&gt;</span>
+                <h2 class="section-title">Work <span class="text-gradient">Experience</span></h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item reveal-left">
+                    <div class="timeline-marker">
+                        <div class="timeline-marker-dot"></div>
+                    </div>
+                    <div class="timeline-content glass-card">
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-title">AI/ML Intern</h3>
+                                <p class="timeline-subtitle">Virtual Intern AICTE(Google)</p>
+                            </div>
+                            <div class="timeline-meta">
+                                <span class="timeline-date">Jul 2025 — Dec 2025</span>
+                                <span class="timeline-tools">CSV, Python</span>
+                            </div>
+                        </div>
+                        <ul class="timeline-list">
+                            <li>
+                            
+                            Completed a 10-week <strong>AI-ML Virtual Internship</strong> through AICTE–EduSkills supported by Google for Developers (Oct–Dec 2025).
+                            </li>
+                            <li>
+                                Learned the basics of <strong>Artificial Intelligence and Machine Learning</strong> with practical tasks.
+                                </li>
+                            <li>
+                                Improved technical skills and gained real-world <strong>learning experience.</strong>
+                                </li>
+                             <li>
+                                Gained industry-oriented <strong>learning experience.</strong>
+
+
+                                </li>
+                            <li>
+                                Strengthened <storng> practical knowledge</storng> for future AI/ML projects.
+                            </li>    
+                                
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section section-dark" id="projects">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">&lt;projects&gt;</span>
+                <h2 class="section-title">Featured <span class="text-gradient">Projects</span></h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card glass-card reveal-up" id="project1">
+                    <div class="project-card-glow"></div>
+                    <div class="project-number">01</div>
+                    <div class="project-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                            <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" />
+                        </svg>
+                    </div>
+                    <h3 class="project-title">Resume Skill Gap Analyser</h3>
+                    <p class="project-description">AI-powered Resume Skill Gap Analyzer website to compare resumes with
+                        job descriptions. Features responsive, SaaS-style UI with NLP-based resume parsing and gap
+                        analysis.</p>
+                    <div class="project-tech">
+                        <span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span><span>Vite</span><span>Tailwind</span><span>Groq
+                            API</span>
+                    </div>
+                    <div class="project-meta">
+                        <span class="project-date">Dec 2025 — Jan 2026</span>
+                    </div>
+                    <ul class="project-highlights">
+                        <li>Developed responsive frontend using React (Vite) and Tailwind CSS</li>
+                        <li>Integrated Groq API for NLP-based resume parsing and skill extraction</li>
+                        <li>Focused on user experience, presenting skill match scores and improvement insights</li>
+                    </ul>
+                </div>
+                <!-- Project 2 -->
+                <div class="project-card glass-card reveal-up" id="project2">
+                    <div class="project-card-glow"></div>
+                    <div class="project-number">02</div>
+                    <div class="project-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                        </svg>
+                    </div>
+                    <h3 class="project-title">Cancer Predictor Using Datasets</h3>
+                    <p class="project-description">Cancer Detection system using real-world medical datasets. Trained
+                        and evaluated models with comprehensive performance metrics for reliable predictions.</p>
+                    <div class="project-tech">
+                        <span>Python</span><span>Machine Learning</span><span>Data
+                            Analysis</span><span>Scikit-learn</span>
+                    </div>
+                    <div class="project-meta">
+                        <span class="project-date">Aug 2025 — Dec 2025</span>
+                    </div>
+                    <ul class="project-highlights">
+                        <li>Designed and developed a Cancer Detection system using real-world medical datasets</li>
+                        <li>Trained models using accuracy, precision, recall, and F1-score metrics</li>
+                        <li>Focused on model reliability and generalization to handle unseen data</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section class="section" id="awards">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">&lt;awards&gt;</span>
+                <h2 class="section-title">Awards & <span class="text-gradient">Certifications</span></h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="awards-grid">
+                <div class="award-card glass-card reveal-up">
+                    <div class="award-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <circle cx="12" cy="8" r="7" />
+                            <path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.12" />
+                        </svg>
+                    </div>
+                    <h3>OCI 2025 — AI Foundations Professional</h3>
+                    <p>Oracle Cloud Infrastructure Certified AI Foundations Professional. Demonstrates strong foundation
+                        in AI and ML concepts, including generative AI, model lifecycle, and real-world AI use cases.
+                    </p>
+                    <span class="award-issuer">Oracle</span>
+                </div>
+                <div class="award-card glass-card reveal-up">
+                    <div class="award-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+                        </svg>
+                    </div>
+                    <h3>Prompt Engineering for Everyone</h3>
+                    <p>Demonstrates hands-on understanding of prompt engineering best practices for optimizing LLM
+                        responses across diverse AI applications.</p>
+                    <span class="award-issuer">IBM Skills Network</span>
+                </div>
+                <div class="award-card glass-card reveal-up">
+                    <div class="award-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path d="M12 15l-2 5l-5-2.5L5 23h14l0-5.5L14 20l-2-5z" />
+                            <path
+                                d="M6.5 2C4 2 2 4.5 2 7.5c0 5 7 9.5 10 12.5C15 17 22 12.5 22 7.5 22 4.5 20 2 17.5 2c-1.8 0-3.5 1-4.5 2.5h-2C10 3 8.3 2 6.5 2z" />
+                        </svg>
+                    </div>
+                    <h3>AI-ML AICTE – EduSkills (Google for Developers)</h3>
+                    <p>Completed a 10-week AI-ML Virtual Internship with AICTE–EduSkills (supported by Google for Developers),
+                         gaining hands-on experience in Python, data preprocessing, and machine learning model development.</p>
+                    <span class="award-issuer">AICTE</span>
+                </div>
+            </div>
+        </div><div class="award-card glass-card reveal-up">
+                    <div class="award-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path d="M12 15l-2 5l-5-2.5L5 23h14l0-5.5L14 20l-2-5z" />
+                            <path
+                                d="M6.5 2C4 2 2 4.5 2 7.5c0 5 7 9.5 10 12.5C15 17 22 12.5 22 7.5 22 4.5 20 2 17.5 2c-1.8 0-3.5 1-4.5 2.5h-2C10 3 8.3 2 6.5 2z" />
+                        </svg>
+                    </div>
+                    <h3>CISCO Awards</h3>
+                    <p>Completed three Cisco certifications in Frontend Development, gaining hands-on skills in 
+                        HTML, CSS, and JavaScript to build responsive and interactive web applications.</p>
+                    <span class="award-issuer">Cisco</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="section section-dark" id="education">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">&lt;education&gt;</span>
+                <h2 class="section-title">My <span class="text-gradient">Education</span></h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="education-card glass-card reveal-up">
+                <div class="education-icon-wrapper">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5">
+                        <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                        <path d="M6 12v5c0 1.1 2.7 3 6 3s6-1.9 6-3v-5" />
+                    </svg>
+                </div>
+                <div class="education-details">
+                    <h3>B.Tech. Artificial Intelligence</h3>
+                    <p class="education-school">Vignan's Institute of Information Technology, Visakhapatnam</p>
+                    <div class="education-meta">
+                        <span class="education-year">Graduating: 2028</span>
+                        <span class="education-cgpa">CGPA: <strong>9.17 / 10</strong></span>
+                    </div>
+                    <div class="education-bar">
+                        <div class="education-bar-fill" data-width="91.7"></div>
+                        <span class="education-bar-label">9.17 / 10</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">&lt;contact&gt;</span>
+                <h2 class="section-title">Get in <span class="text-gradient">Touch</span></h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info reveal-left">
+                    <p class="contact-intro">I’m always open to new opportunities, collaborations, 
+                        and meaningful discussions around AI and technology. Feel free to connect and reach out!</p>
+                    <div class="contact-cards">
+                        <a href="mailto:muralipatnala2486@gmail.com" class="contact-card glass-card">
+                            <div class="contact-card-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                    <path d="M22 6l-10 7L2 6" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Email</h4>
+                                <span>muralipatnala2486@gmail.com</span>
+                            </div>
+                        </a>
+                        <a href="tel:+918919009613" class="contact-card glass-card">
+                            <div class="contact-card-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Phone</h4>
+                                <span>+91-8919009613</span>
+                            </div>
+                        </a>
+                        <a href="https://www.linkedin.com/in/murali-lakshmi-sai-patnala-198343348" target="_blank" rel="noopener"
+                            class="contact-card glass-card">
+                            <div class="contact-card-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                                    <rect x="2" y="9" width="4" height="12" />
+                                    <circle cx="4" cy="4" r="2" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>LinkedIn</h4>
+                                <span>linkedin.com/in/murali-lakshmi-sai-patnala-198343348</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper reveal-right">
+                    <form class="contact-form glass-card" id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="formName" placeholder=" " required>
+                            <label for="formName">Your Name</label>
+                            <div class="form-line"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="formEmail" placeholder=" " required>
+                            <label for="formEmail">Your Email</label>
+                            <div class="form-line"></div>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="formMessage" rows="4" placeholder=" " required></textarea>
+                            <label for="formMessage">Your Message</label>
+                            <div class="form-line"></div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <span>Send Message</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <a href="#hero" class="footer-logo">
+                    <span class="nav-logo-bracket">&lt;</span>MP<span class="nav-logo-bracket">/&gt;</span>
+                </a>
+                <p class="footer-text">Designed & Built by <strong>Murali Patnala</strong></p>
+                <div class="footer-socials">
+                    <a href="mailto:muralipatnala2486@gmail.com" aria-label="Email">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                            <path d="M22 6l-10 7L2 6" />
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/murali-lakshmi-sai-patnala-198343348" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                            <rect x="2" y="9" width="4" height="12" />
+                            <circle cx="4" cy="4" r="2" />
+                        </svg>
+                    </a>
+                    <a href="tel:+918919009613" aria-label="Phone">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <p class="footer-copyright">&copy; 2026 Murali Patnala. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
